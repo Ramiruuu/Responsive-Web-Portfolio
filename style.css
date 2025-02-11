@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #222831;
     color: #EEEEEE;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -20,7 +21,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -54,62 +55,70 @@ h1 {
     border-radius: 5px;
 }
 
-/* About Me Section */
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background-color: transparent;
+    border: none;
+    color: #EEEEEE;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* About Section */
 .intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #393E46;
     padding: 50px 0;
 }
 
-.intro img {
-    max-width: 200px;
-    border-radius: 10px;
-    margin-right: 30px;
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.intro p {
-    max-width: 600px;
-    font-size: 18px;
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Skills Section */
-.skills ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+.skills {
+    padding: 50px 0;
 }
 
-.skills li {
-    background-color: #393E46;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Projects Section */
-.projects ul {
+ul {
     list-style: none;
     padding-left: 0;
 }
 
-.projects li {
-    margin: 15px 0;
+ul li {
+    margin: 10px 0;
 }
 
-.projects a {
+a {
     color: #00ADB5;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* Contact Section */
-.contact .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+a:hover {
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
     margin-top: 20px;
+}
+
+.social-links a {
+    margin-right: 15px;
+    color: #EEEEEE;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    color: #00ADB5;
 }
 
 /* Footer */
@@ -119,6 +128,29 @@ footer {
     text-align: center;
     color: #EEEEEE;
     margin-top: 50px;
+}
+
+/* Light Mode Styles */
+.light-mode {
+    background-color: #EEEEEE;
+    color: #222831;
+}
+
+.light-mode header {
+    background-color: #F4F4F4;
+}
+
+.light-mode .nav-links a {
+    color: #222831;
+}
+
+.light-mode footer {
+    background-color: #F4F4F4;
+    color: #222831;
+}
+
+.light-mode .social-links a {
+    color: #222831;
 }
 
 /* Responsive Design */
@@ -132,17 +164,12 @@ footer {
         margin-bottom: 10px;
     }
 
-    .intro {
+    .about-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .intro img {
-        margin-right: 0;
+    .profile-img {
         margin-bottom: 20px;
-    }
-
-    .skills ul {
-        grid-template-columns: 1fr 1fr;
     }
 }
